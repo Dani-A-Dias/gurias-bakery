@@ -8,6 +8,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <main>
+        <!-- #game-intro is initially shown on the game start screen -->
+        <div id="game-intro">
+          <!--<img src="./images/logo.png" alt="" class="logo-img" />-->
+          <br />
+          <h1>Guria's Bakery</h1>
+          <button id="start-button">Start Game</button><br>
+          <button id="select-level-button">Select Dificulty</button><br>
+          <button id="game-score-button">High Scores</button><br>
+          
+          <img src="./images/arrows.png" alt="" class="arrows-img" />
+
+            <div class="instructions">
+                <ul>
+                    <li>Use the left and right arrow to control the cat!</li>
+                    <li>Catch all the necessary ingredients to complete the recipe before the time ends!</li>
+                    <li>Beware of rotten food!</li>
+                    </ul>
+            </div>
+
+        </div>
+  
+        <div id="game-container">
+          <div>
+            <h2>Stats</h2>
+            <p>Time Left: <span id="score">0</span></p>
+            <p>Lives: <span id="lives">9</span></p>
+            <p>Score: <span id="score">0</span></p>
+          </div>
+          <div>
+            <h2>Objectives</h2>
+            <p>Recipe: <span id="lives">Ohhh</span></p>
+            <p>Special Ingredient: <span id="lives">Ohhhhh!</span></p>            
+          </div>
+          <!-- #game-screen is initially hidden using CSS style display: none -->
+          <div id="game-screen">
+
+
+
+
+
+
+          </div>
+        </div>
+
+        
+  
+        <!-- #game-end is initially hidden using CSS style display: none -->
+        <div id="game-over">
+          <h1>Oh no!</h1>
+          <br />
+          <button id="restart-button">Let's bake again?</button>
+        </div>
+      </main>
+  
     
 
 

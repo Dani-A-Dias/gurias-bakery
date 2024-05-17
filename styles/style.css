@@ -2,31 +2,60 @@ body {
     font-family: 'Raleway', sans-serif;
     background-color: #FFF8E8; /* Cream background */
     color: #333; /* Dark grey text */
+    width: 100vw;
+    padding: 0;
+    text-align: center;
+    margin:1vw, 3vw;
+
   }
   
   h1, h2, h3 {
     font-family: 'Amatic SC', cursive;
-    color: #F4C2C2; /* Pastel pink for titles */
+    color: #fdb6b6; /* Pastel pink for titles */
+    font-weight:900;
   }
   
-  .button {
+  button {
     background-color: #FF6F61; /* Bright accent color */
     color: #FFF;
     border: none;
+    margin: 0.4vw;
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
   }
   
-  .button:hover {
+  button:hover {
     background-color: #FF4F41;
+  }
+
+  .game-intro {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+
   }
   
   .game-screen {
     background: linear-gradient(to bottom, #A8DDE9, #FFF3B0); /* Morning gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   .game-over-screen {
     background: linear-gradient(to bottom, #FFD1DC, #D8BFD8); /* Evening gradient */
+  }
+
+  .instructions{
+    width: 40vw;
+    display: block;
+    justify-content:flex-start;
+    align-items:flex-end;
+    text-align: justify;
+
+
   }
   
