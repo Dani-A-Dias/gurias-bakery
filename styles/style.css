@@ -1,0 +1,32 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #FFF8E8; /* Cream background */
+    color: #333; /* Dark grey text */
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Amatic SC', cursive;
+    color: #F4C2C2; /* Pastel pink for titles */
+  }
+  
+  .button {
+    background-color: #FF6F61; /* Bright accent color */
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #FF4F41;
+  }
+  
+  .game-screen {
+    background: linear-gradient(to bottom, #A8DDE9, #FFF3B0); /* Morning gradient */
+  }
+  
+  .game-over-screen {
+    background: linear-gradient(to bottom, #FFD1DC, #D8BFD8); /* Evening gradient */
+  }
+  

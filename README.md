@@ -8,7 +8,11 @@ Guria's Bakery is a fun and engaging game where you control Guria, an adorable c
 ## The Inspiration
 My cat Guria is my source of inspiration for this game. She is always "making biscuits" and since I love baking, I decided to join the two into a simple yet fun game!
 <br> 
+<details>
+<summary>Guria</summary>
+<br>
 <img src="../gurias-bakery/images/Guria.jpg" width="300"/>
+</details>
 <br>
 
 ## MVP
