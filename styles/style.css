@@ -1,61 +1,91 @@
 body {
-    font-family: 'Raleway', sans-serif;
-    background-color: #FFF8E8; /* Cream background */
-    color: #333; /* Dark grey text */
-    width: 100vw;
-    padding: 0;
-    text-align: center;
-    margin:1vw, 3vw;
+  font-family: 'Raleway', sans-serif;
+  background-color: #FFF8E8; /* Cream background */
+  color: #333; /* Dark grey text */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  text-align: center;
+}
 
-  }
-  
-  h1, h2, h3 {
-    font-family: 'Amatic SC', cursive;
-    color: #fdb6b6; /* Pastel pink for titles */
-    font-weight:900;
-  }
-  
-  button {
-    background-color: #FF6F61; /* Bright accent color */
+h1, h2, h3 {
+  font-family: 'Amatic SC', cursive;
+  color: #fdb6b6; /* Pastel pink for titles */
+  font-weight: 900;
+}
+
+button {
+  background-color: #fcc9c8;
+  border: 4px solid #e56d89;
     color: #FFF;
-    border: none;
-    margin: 0.4vw;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+  margin: 0.4vw;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.7em;
+  font-weight: bold;
+  display: block;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+button:hover {
+  background-color: #e56d89;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#game-intro {
+  background-image: url("../images/guriasbakery.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 960px;
+  height: 640px;
   
-  button:hover {
-    background-color: #FF4F41;
-  }
+}
 
-  .game-intro {
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
+#game-container {
+  display: none;
+}
 
-  }
+#game-screen {
+  background: linear-gradient(to bottom, #A8DDE9, #FFF3B0); /* Morning gradient */
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-over {
+  display: none;
+  background: linear-gradient(to bottom, #FFD1DC, #D8BFD8); /* Evening gradient */
+}
+
+.instructions {
+  width: 30vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: justify;
+  border: 2px solid #e56d89;
+  border-radius: 5px;
+  background:  #f4dbd6;
+  padding: 0.5vw;
   
-  .game-screen {
-    background: linear-gradient(to bottom, #A8DDE9, #FFF3B0); /* Morning gradient */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .game-over-screen {
-    background: linear-gradient(to bottom, #FFD1DC, #D8BFD8); /* Evening gradient */
-  }
+}
 
-  .instructions{
-    width: 40vw;
-    display: block;
-    justify-content:flex-start;
-    align-items:flex-end;
-    text-align: justify;
-
-
-  }
-  
+.instructions li{
+ list-style:none ;
+ padding-left: 0;
+}
