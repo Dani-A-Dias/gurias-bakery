@@ -56,24 +56,39 @@ button:hover {
 }
 
 #game-intro {
-  background-image: url("../images/guriasbakery.png");
+  background-image: url("../images/guriasbakery2.png");
   display: flex;
   flex-direction: row;
   width: 960px;
-  height: 640px;
+  height: 700px;
   
 }
 
 #game-container {
+  background-image: url("../images/kitchenlevel.png");
   display: none;
+  justify-content: space-between;
+  width: 960px;
+  height: 700px;
+}
+
+#game-container div{
+  border: 2px solid #e56d89;
+  border-radius: 5px;
+  background:  #f4dbd6;
+  height:fit-content;
+  text-align: justify;
+  margin: 1vw;
 }
 
 #game-screen {
-  background: linear-gradient(to bottom, #A8DDE9, #FFF3B0); /* Morning gradient */
+  background-image: url("../images/kitchenlevel.png");
   display: none;
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  width: 960px;
+  height: 700px;
 }
 
 #game-over {
@@ -89,7 +104,7 @@ button:hover {
 }
 
 .instructions {  
-  display: block;
+  display: flex;
   height:fit-content;
   text-align: justify;
   border: 2px solid #e56d89;
@@ -97,6 +112,7 @@ button:hover {
   background:  #f4dbd6;
   font-size: 1em;
   padding: 5px;
+  margin-bottom: 5px;
  
 }
 
