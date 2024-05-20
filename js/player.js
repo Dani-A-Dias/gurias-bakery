@@ -38,8 +38,8 @@ class Player {
     }
 
     calculateMarginWidth() {
-        const bodyThing = document.querySelector("body")
-        const computedStyle = window.getComputedStyle(bodyThing);
+        let bodyThing = document.querySelector("body")
+        let computedStyle = window.getComputedStyle(bodyThing);
         return parseFloat(computedStyle.marginLeft) + parseFloat(computedStyle.marginRight);
     }
 

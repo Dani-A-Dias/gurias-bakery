@@ -2,19 +2,28 @@ window.onload = function () {
 	// variables
 	const startButton = document.getElementById('start-button');
 	const restartButton = document.getElementById('restart-button');
+	const returnButton = document.getElementById('return-button');
 	const selectLevel = document.getElementById('select-level-button');
 	const highScores = document.getElementById('game-score-button');
 	const newGame = new Game();
+	const myLevel = new Level();
+	//const selectlvl = new Level();
 
 	//Event listeners
-
 	startButton.addEventListener('click', function () {
 		console.log('Start Button was pressed');
         startGame()
 	});
     selectLevel.addEventListener("click", ()=>{
         console.log("Select level pressed")
+		openLevelMenuScreen()
+		
     })
+	returnButton.addEventListener("click", ()=>{
+		console.log("Return btn pressed")
+		returnMainMenu()
+	})
+
     highScores.addEventListener("click", ()=>{
         console.log("Check High Scores pressed")
     })
@@ -35,7 +44,7 @@ window.onload = function () {
 
     })
 	});
-
+	//Change Player Appearance
 	document.addEventListener("keypress", (event)=>{
 		if(event.code === "KeyW"){
 			newGame.player.changeImage("images/guriaWW.png");
@@ -61,8 +70,20 @@ window.onload = function () {
 		}
 		
 	})
-
+	// Start DA GAME
     function startGame(){
         newGame.start()
     }
+
+	function returnMainMenu(){
+        myLevel.returnMainScreen()
+    }
+
+	function openLevelMenuScreen(){
+        myLevel.openLevelMenu()
+    }
+
+	/* function selectLevels(){
+		selectlvl.
+	} */
 };

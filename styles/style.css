@@ -83,10 +83,7 @@ button:hover {
 }
 
 #game-screen {
-  background-image: url("../images/kitchenlevel.png");
   display: none;
-
-
 }
 
 #game-over {
@@ -105,9 +102,9 @@ button:hover {
   display: block;
   height:fit-content;
   text-align: justify;
-  border: 2px solid #e56d89;
+  border: 4px solid #000000;
   border-radius: 5px;
-  background:  #f4dbd6;
+  background-color: #fcc9c8;
   font-size: 1em;
   padding: 5px;
 
@@ -115,7 +112,51 @@ button:hover {
 }
 
 .instructions li{
- list-style:none ;
+  list-style:none ;
  padding-left: 0;
  margin-bottom: 0;
+}
+
+#select-lvl{
+  display: none;
+  flex-direction: column;
+  font-size: 1.9em;
+  font-weight: bolder;
+  width: 960px;
+  height: 700px;
+  background: linear-gradient(to bottom, #fff8f9, #D8BFD8);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+}
+#slct-lvl-btn{
+  display: flex;
+  justify-content:space-evenly;
+  width:70%;
+}
+
+#select-lvl p{
+ margin: 10px auto;
+  width:60%;
+  font-size: 0.7em;
+}
+
+#select-lvl button{
+  background-color: #fcc9c8;
+  border: 2px solid #000000;
+  color: #FFF;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#select-lvl img{
+  display: block;
+  text-align: center;
+  margin-bottom: 1vw;
+  width: 480px;
+  height: 350px;
 }
