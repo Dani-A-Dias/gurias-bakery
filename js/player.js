@@ -19,9 +19,7 @@ class Player {
  
     }
 
- 
-
-    move() {
+     move() {
       this.left += this.directionX;
   
       if (this.left < this.finalMarginW) {
@@ -43,5 +41,9 @@ class Player {
         const bodyThing = document.querySelector("body")
         const computedStyle = window.getComputedStyle(bodyThing);
         return parseFloat(computedStyle.marginLeft) + parseFloat(computedStyle.marginRight);
+    }
+
+    changeImage(newImgSrc){
+        this.element.src = newImgSrc;
     }
   }

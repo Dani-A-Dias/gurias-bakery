@@ -36,6 +36,32 @@ window.onload = function () {
     })
 	});
 
+	document.addEventListener("keypress", (event)=>{
+		if(event.code === "KeyW"){
+			newGame.player.changeImage("images/guriaWW.png");
+
+		} else if(event.code === "KeyG"){
+			newGame.player.changeImage("images/guria1.png");
+
+		}else if(event.code === "KeyC"){
+			newGame.player.changeImage("images/cannoli.png");
+
+		}else if(event.code === "KeyH"){
+			newGame.player.changeImage("images/horus.png");
+
+		}else if(event.code === "KeyN"){
+			newGame.player.changeImage("images/neji.png");
+
+		}else if(event.code === "KeyP"){
+			newGame.player.changeImage("images/peppo.png");
+		}
+
+		else if(event.code === "KeyR"){
+			newGame.player.changeImage("images/ra.png");
+		}
+		
+	})
+
     function startGame(){
         newGame.start()
     }

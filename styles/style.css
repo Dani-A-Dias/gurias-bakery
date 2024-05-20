@@ -14,7 +14,7 @@ body {
 
 h1, h2, h3 {
   font-family: 'Amatic SC', cursive;
-  color: #fdb6b6; /* Pastel pink for titles */
+  color: #fdb6b6; 
   font-weight: 900;
 }
 
@@ -31,7 +31,7 @@ h1, h2, h3 {
 
 .btn-intro button{
   background-color: #fcc9c8;
-  border: 4px solid #e56d89;
+  border: 4px solid #000000;
     color: #FFF;
   margin: 0.4vw;
   padding: 10px 15px;
@@ -91,7 +91,7 @@ button:hover {
 
 #game-over {
   display: none;
-  background: linear-gradient(to bottom, #FFD1DC, #D8BFD8); /* Evening gradient */
+  background: linear-gradient(to bottom, #FFD1DC, #D8BFD8); 
 }
 
 #instuct-box{
@@ -102,7 +102,7 @@ button:hover {
 }
 
 .instructions {  
-  display: flex;
+  display: block;
   height:fit-content;
   text-align: justify;
   border: 2px solid #e56d89;
@@ -110,11 +110,12 @@ button:hover {
   background:  #f4dbd6;
   font-size: 1em;
   padding: 5px;
-  margin-bottom: 5px;
+
  
 }
 
 .instructions li{
  list-style:none ;
  padding-left: 0;
+ margin-bottom: 0;
 }

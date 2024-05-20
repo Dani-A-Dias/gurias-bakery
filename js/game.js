@@ -22,7 +22,7 @@ class Game {
         this.startScreen.style.display = "none";
         this.gameContainer.style.display = "flex";
         this.gameScreen.style.display = "block";
-        this.player = new Player(this.gameScreen, "../images/guria1.png"); // Mover a inicialização do jogador para dentro do método start()
+        this.player = new Player(this.gameScreen, "../images/guria1.png"); 
         this.gameIntervalId = setInterval(() => {
             this.gameLoop();
         }, this.gameLoopFrequency);
