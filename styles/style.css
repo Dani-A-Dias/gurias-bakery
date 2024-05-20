@@ -2,12 +2,13 @@ body {
   font-family: 'Raleway', sans-serif;
   background-color: #FFF8E8; /* Cream background */
   color: #333; /* Dark grey text */
-  margin: 0;
+  margin:0 auto;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  width: 960px;
+  height: 700px;
   text-align: center;
 }
 
@@ -84,11 +85,8 @@ button:hover {
 #game-screen {
   background-image: url("../images/kitchenlevel.png");
   display: none;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  width: 960px;
-  height: 700px;
+
+
 }
 
 #game-over {

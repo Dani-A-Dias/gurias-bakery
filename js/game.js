@@ -1,10 +1,9 @@
 class Game {
     constructor(){
         this.startScreen = document.getElementById("game-intro");
-        this.gameContainer = document.getElementById("game-container")
+        this.gameContainer = document.getElementById("game-container");
         this.gameScreen = document.getElementById("game-screen");
         this.gameOverScreen = document.getElementById("game-over");
-        this.player = new Player(this.gameScreen, 240, 240,(700-150), 450, "../images/guria1.png");
         this.height = 700;
         this.width = 960;
         this.timer = 0;
@@ -18,28 +17,26 @@ class Game {
     }
 
     start(){
-        this.gameScreen.style.height = `${this.height}px`
+        this.gameScreen.style.height = `${this.height}px`;
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = "none";
         this.gameContainer.style.display = "flex";
-        this.gameScreen.style.display = "block"
-        this.gameIntervalId = setInterval(()=>{
-            
-            this.gameLoop()
-        },this.gameLoopFrequency)
-
+        this.gameScreen.style.display = "block";
+        this.player = new Player(this.gameScreen, "../images/guria1.png"); // Mover a inicialização do jogador para dentro do método start()
+        this.gameIntervalId = setInterval(() => {
+            this.gameLoop();
+        }, this.gameLoopFrequency);
     }
+
     gameLoop(){
         console.log("Inside game loop")
-        this.update()        
+        this.update();        
         if(this.isGameOver){
-            clearInterval(this.gameIntervalId)
+            clearInterval(this.gameIntervalId);
         }
-
     }
 
     update() {
         this.player.move();
     }
-
 }

@@ -11,32 +11,27 @@
     <main>
         <!-- #game-intro is initially shown on the game start screen -->
         <div id="game-intro">
-          <!--<img src="./images/logo.png" alt="" class="logo-img" />-->
           <div class="btn-intro"> <!--Left side of the screen-->
-          <button id="start-button">Start Game</button><br>
-          <button id="select-level-button">Select Dificulty</button><br>
-          <button id="game-score-button">High Scores</button><br>
+              <button id="start-button">Start Game</button><br>
+              <button id="select-level-button">Select Dificulty</button><br>
+              <button id="game-score-button">High Scores</button><br>
           </div>
-          
-
-            <div id = "instuct-box"><!--Right side of the screen-->
-            
-                <ul class="instructions">
-                    <li>Use the left and right arrow to control the cat!</li>
-                    <li>Catch all the necessary ingredients to complete the recipe before the time ends!</li>
-                    <li>Beware of rotten food!</li>
-                    </ul>
-            </div>
-
+          <div id="instuct-box"><!--Right side of the screen-->
+              <ul class="instructions">
+                  <li>Use the left and right arrow to control the cat!</li>
+                  <li>Catch all the necessary ingredients to complete the recipe before the time ends!</li>
+                  <li>Beware of rotten food!</li>
+              </ul>
+          </div>
         </div>
         <div id="game-screen">
-        <div id="game-container">
+         <div id="game-container">
           <div>
             <h2>Stats</h2>
             <p>Time Left: <span id="timer">0</span></p>
             <p>Lives: <span id="lives">7</span></p>
             <p>Score: <span id="score">0</span></p>
-            <img src="../images\flour.png" alt="carrot">
+            <img src="../images/flour.png" alt="carrot">
           </div>
           
           <div>
@@ -45,20 +40,9 @@
             <p>Ingredients: <span id="ingredients">Ohhhhh!</span></p>            
           </div>
           <!-- #game-screen is initially hidden using CSS style display: none -->
-          
-        </div>
-      </div>
-
-
-
-
-
-
-        </div>
-
-        
-  
-        <!-- #game-end is initially hidden using CSS style display: none -->
+                </div>
+          </div>
+        <!-- #game-over is initially hidden using CSS style display: none -->
         <div id="game-over">
           <h1>Oh no!</h1>
           <br />
@@ -66,7 +50,6 @@
         </div>
       </main>
   
-     
     <script type="text/javascript" src="js/ingredients.js"></script>
     <script type="text/javascript" src="js/player.js"></script> 
     <script type="text/javascript" src="js/game.js"></script>
