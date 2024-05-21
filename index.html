@@ -10,55 +10,57 @@
 <body>
     <main>
         <div id="game-intro">
-            <div class="btn-intro">
-                <button id="start-button">Start Game</button><br>
-                <button id="select-level-button">Select Level</button><br>
-                <button id="game-score-button">High Scores</button><br>
-            </div>
-            <div id="instuct-box">
-                <ul class="instructions">
-                    <li>Use the left and right arrow to control the cat!</li>
-                    <li>Catch all the necessary ingredients to complete the recipe before the time ends!</li>
-                    <li>Beware of rotten food!</li>
-                </ul>
-            </div>
+          <div class="btn-intro">
+              <button id="start-button">Start Game</button><br>
+              <button id="select-level-button">Select Level</button><br>
+              <button id="game-score-button">High Scores</button><br>
+          </div>
+          <div id="instuct-box">
+              <ul class="instructions">
+                  <li>Use the left and right arrow to control the cat!</li>
+                  <li>Catch all the necessary ingredients to complete the recipe before the time ends!</li>
+                  <li>Beware of rotten food!</li>
+              </ul>
+          </div>
         </div>
-        <div id="game-screen" style="display: none;">
-            <div id="game-container">
-                <div>
-                    <h2>Stats</h2>
-                    <p>Time Left: <span id="timer">0</span></p>
-                    <p>Lives: <span id="lives">7</span></p>
-                    <p>Score: <span id="score">0</span></p>
-                </div>
-                <div>
-                    <h2>Objectives</h2>
-                    <p>Recipe: <span id="recipe">Ohhh</span></p>
-                    <p>Ingredients: <span id="ingredients"> Uh</span></p>            
-                </div>
-            </div>
+        <div id="game-screen" style="display:none;">
+         <div id="game-container">
+          <div>
+            <h2>Stats</h2>
+            <p>Time Left: <span id="timer">0</span></p>
+            <p>Lives: <span id="lives">7</span></p>
+            <p>Score: <span id="score">0</span></p>
+          </div>
+          
+          <div>
+            <h2>Objectives</h2>
+            <p>Recipe: <span id="recipe"></span></p>
+            <p>Ingredients: <ul id="ingredients"></ul></p>
+          </div>
+          </div>
         </div>
-        <div id="select-lvl" style="display: none;">
-            <h2>Select Level</h2>
+        <div id="select-lvl" style="display:none;">
+          <h2>Select Level</h2>
             <div id="slct-lvl-btn">
-                <button id="lvl1-button">Easy Mode</button><br>
-                <button id="lvl2-button">Medium Mode</button><br>
-                <button id="lvl3-button">Hard Mode</button><br>
-            </div>
-            <div>
-                <p id="level-text">Level 1: Less ingredients to catch but more time to do it!</p>
-            </div>
-            <img id="smallImgBack" src="images/kitchenlevel.png" alt="kitchen">
-            <button id="return-button">Return</button><br>
+          <button id="lvl1-button">Easy Mode</button><br>
+          <button id="lvl2-button">Medium Mode</button><br>
+          <button id="lvl3-button">Hard Mode</button><br>
+          </div>
+          <div>
+          <p id="level-text">Level 1: Less ingredients to catch but more time to do it!</p>
+           </div>
+          <img id="smallImgBack" src="images/kitchenlevel.png" alt="kitchen">
+          <button id="return-button">Return</button><br>
         </div>
-        <div id="game-over" style="display: none;">
-            <h1>Oh no!</h1>
-            <br />
-            <button id="restart-button">Let's bake again?</button>
+        <div id="game-over" style="display:none;">
+          <h1>Oh no!</h1>
+          <br />
+          <button id="restart-button">Let's bake again?</button>
         </div>
-    </main>
-    <script type="text/javascript" src="js/player.js"></script>
-    <script type="text/javascript" src="js/recipes.js"></script>
+      </main>
+  
+    <script type="text/javascript" src="js/player.js"></script> 
+    <script type="text/javascript" src="js/recipes.js"></script> 
     <script type="text/javascript" src="js/select-level.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/script.js"></script>

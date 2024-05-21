@@ -28,8 +28,8 @@ class Player {
         this.left = 960+this.finalMarginW-this.width
       }
       this.updatePosition();
-      console.log(this.finalMarginW)
-      console.log(this.marginWidth)
+      //console.log(this.finalMarginW)
+      //console.log(this.marginWidth)
     }
   
     updatePosition() {
@@ -46,4 +46,7 @@ class Player {
     changeImage(newImgSrc){
         this.element.src = newImgSrc;
     }
+
+    
   }
+  

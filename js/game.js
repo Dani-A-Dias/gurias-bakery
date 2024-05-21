@@ -9,30 +9,31 @@ class Game {
         this.height = 700;
         this.width = 960;
         this.timer = 0;
+        this.ingredients = [];
         this.score = 0;
         this.lives = 7;
         this.isGameOver = false;
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
-        
         this.elementRecipeName = document.getElementById("recipe");
         this.elementRecipeIngredients = document.getElementById("ingredients");
-        this.setRecipe(this.levelChoice.selectedLevel);
-        this.displayRecipe();
-       
     }
 
     setRecipe(level) {
-        this.recipe = new Recipe(level);
-
+        return new Recipe(level); 
     }
 
     start() {
         if (!this.levelChoice.selectedLevel) {
             this.setDefaultRecipe();
         } else {
-            this.setRecipe(this.levelChoice.selectedLevel);
+           
+            this.recipe = this.setRecipe(this.levelChoice.selectedLevel);
         }
+
+        
+        this.displayRecipe();
+
         this.gameScreen.style.height = `${this.height}px`;
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = "none";
@@ -41,11 +42,10 @@ class Game {
         this.gameIntervalId = setInterval(() => {
             this.gameLoop();
         }, this.gameLoopFrequency);
-        this.displayRecipe();
     }
 
     setDefaultRecipe() {
-        this.setRecipe("easy");
+        this.recipe = this.setRecipe("easy");
     }
 
     gameLoop() {
@@ -61,30 +61,15 @@ class Game {
     }
 
     displayRecipe() {
-        if (!this.elementRecipeName || !this.elementRecipeIngredients) {
-            return;
+        if (this.recipe) {
+            const recipeDisplay = this.recipe.recipe;
+            this.elementRecipeName.innerText = recipeDisplay.name;
+            this.elementRecipeIngredients.innerHTML = ''; 
+            recipeDisplay.ingredients.forEach(ingredient => {
+                const liLine = document.createElement("li");
+                liLine.innerText = ingredient;
+                this.elementRecipeIngredients.appendChild(liLine);
+            });
         }
-        const recipeDisplay = this.recipe.recipe;
-        this.elementRecipeName.innerText = recipeDisplay.name;
-        this.elementRecipeIngredients.innerHTML = ""; // Clear existing list
-
-        this.recipe.ingredients.forEach((ingredient) => {
-            const liLine = document.createElement("li");
-            liLine.innerText = `${ingredient.name}: ${ingredient.collected}/${ingredient.quantityNeeded}`;
-            this.elementRecipeIngredients.appendChild(liLine);
-        });
-    }
-
-    updateDisplayRecipe() {
-        if (!this.elementRecipeIngredients) {
-            return;
-        }
-        this.elementRecipeIngredients.innerHTML = ""; // Clear existing list
-
-        this.recipe.ingredients.forEach((ingredient) => {
-            const liLine = document.createElement("li");
-            liLine.innerText = `${ingredient.name}: ${ingredient.collected}/${ingredient.quantityNeeded}`;
-            this.elementRecipeIngredients.appendChild(liLine);
-        });
     }
 }

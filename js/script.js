@@ -32,7 +32,7 @@ window.onload = function () {
 	});
 
 	document.addEventListener('keydown', (event) => {
-		console.log('a key was pressed', event);
+		//console.log('a key was pressed', event);
 		if (event.code === 'ArrowRight') {
 			newGame.player.directionX = 6;
 		} else if (event.code === 'ArrowLeft') {

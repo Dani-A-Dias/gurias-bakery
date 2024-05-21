@@ -3,7 +3,7 @@ class Level {
         this.startScreen = document.getElementById("game-intro");
         this.selectLevelScreen = document.getElementById("select-lvl");
         this.textDescriptionLevel = document.getElementById("level-text");
-        this.selectedLevel = 'easy';
+        this.selectedLevel = 'easy'; 
         this.changeLevel(); 
     }
 
@@ -19,7 +19,7 @@ class Level {
             this.textDescriptionLevel.innerText = "Level 1: Less ingredients to catch but more time to do it!";
             gameBackImage.style.backgroundImage = "url('../images/kitchenlevel.png')";
             gameSmallImage.src = "images/kitchenlevel.png";
-            this.selectedLevel = 'easy';
+            this.selectedLevel = 'easy'; 
         });
 
         mediumMode.addEventListener("click", () => {
@@ -27,7 +27,7 @@ class Level {
             this.textDescriptionLevel.innerText = "Level 2: You need more ingredients to make your recipe but you still have plenty of time to do it!";
             gameBackImage.style.backgroundImage = "url('../images/streetlevel.png')";
             gameSmallImage.src = "images/streetlevel.png";
-            this.selectedLevel = 'medium';
+            this.selectedLevel = 'medium'; 
         });
 
         hardMode.addEventListener("click", () => {
