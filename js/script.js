@@ -83,7 +83,5 @@ window.onload = function () {
         myLevel.openLevelMenu()
     }
 
-	/* function selectLevels(){
-		selectlvl.
-	} */
+
 };

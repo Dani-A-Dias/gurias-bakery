@@ -1,4 +1,4 @@
-const recipes = {
+let recipes = {
     easy: [
         { name: "Banana Biscuits", ingredients: ["banana", "flour", "egg", "butter", "honey"] },
         { name: "Pancakes", ingredients: ["egg", "flour", "honey", "butter"] },
@@ -15,3 +15,25 @@ const recipes = {
         { name: "Nigiri", ingredients: ["rice", "salmon", "tuna", "seaweed", "cucumber"] }
     ]
 };
+
+class Recipe{
+    constructor(level){
+        this.level = level;
+        this.recipe = null;
+        this.selectRandomRecipe()
+    }
+    
+    selectRandomRecipe() {
+        const randomRecipes = recipes[this.level];
+        if (!randomRecipes || randomRecipes.length === 0) {
+            throw new Error(`No recipes available for level: ${this.level}`);
+        }
+        const randomIndex = Math.floor(Math.random() * randomRecipes.length);
+        this.recipe = randomRecipes[randomIndex];
+    }
+
+
+
+}
+
+
