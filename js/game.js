@@ -8,15 +8,18 @@ class Game {
         this.player = new Player(this.gameScreen, "../images/guria1.png");
         this.height = 700;
         this.width = 960;
-        this.timer = 0;
+        this.timer = 30000; // 30 seconds for the game duration
         this.score = 0;
         this.lives = 7;
         this.isGameOver = false;
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
-
+        this.lastIngredientTime = 0;
+        this.ingredientInterval = 2000; // create a new ingredient every 2 seconds
+        this.ingredients = [];
         this.elementRecipeName = document.getElementById("recipe");
         this.elementRecipeIngredients = document.getElementById("ingredients");
+
         this.setRecipe(this.levelChoice.selectedLevel);
         this.displayRecipe();
     }
@@ -36,9 +39,8 @@ class Game {
         this.startScreen.style.display = "none";
         this.gameContainer.style.display = "flex";
         this.gameScreen.style.display = "block";
-        this.gameIntervalId = setInterval(() => {
-            this.gameLoop();
-        }, this.gameLoopFrequency);
+        this.startTime = Date.now();
+        this.gameIntervalId = setInterval(() => this.gameLoop(), this.gameLoopFrequency);
         this.displayRecipe();
     }
 
@@ -47,8 +49,23 @@ class Game {
     }
 
     gameLoop() {
-        console.log("Inside game loop");
+        const now = Date.now();
+        const elapsedTime = now - this.startTime;
+
+        if (elapsedTime >= this.timer) {
+            this.isGameOver = true;
+            this.endGame();
+            return;
+        }
+
+        if (now - this.lastIngredientTime > this.ingredientInterval) {
+            this.createNewIngredient();
+            this.lastIngredientTime = now;
+        }
+
         this.update();
+        this.displayRecipe();
+
         if (this.isGameOver) {
             clearInterval(this.gameIntervalId);
         }
@@ -56,31 +73,52 @@ class Game {
 
     update() {
         this.player.move();
+        this.ingredients.forEach(ingredient => ingredient.updatePosition());
+        this.removeOffscreenIngredients();
     }
 
-    displayRecipe() {
-        if (!this.elementRecipeName || !this.elementRecipeIngredients) {
-            return;
-        }
-        const recipeDisplay = this.recipe.recipe;
-        this.elementRecipeName.innerText = recipeDisplay.name;
-        this.elementRecipeIngredients.innerHTML = "";
+    createNewIngredient() {
+        const ingredientData = this.recipe.getRandomIngredientData();
+        const newIngredient = new Ingredient(
+            this.gameScreen,
+            ingredientData.name,
+            ingredientData.points,
+            ingredientData.quantityNeeded,
+            ingredientData.speed,
+            ingredientData.imageIngr
+        );
+        this.ingredients.push(newIngredient);
+    }
 
-        this.recipe.ingredients.forEach((ingredient) => {
-            const liLine = document.createElement("li");
-            liLine.innerText = `${ingredient.name}: ${ingredient.collected}/${ingredient.quantityNeeded}`;
-            this.elementRecipeIngredients.appendChild(liLine);
+    removeOffscreenIngredients() {
+        this.ingredients = this.ingredients.filter(ingredient => {
+            if (ingredient.top > this.gameScreen.clientHeight || this.isGameOver) {
+                ingredient.remove();
+                return false;
+            }
+            return true;
         });
     }
 
-    updateDisplayRecipe() {
-        if (!this.elementRecipeIngredients) {
-            return;
-        }
+    endGame() {
+        console.log("Game Over");
+        this.removeOffscreenIngredients();
+        this.gameContainer.style.display = "none";
+        this.gameScreen.style.display = "none";
+        this.gameOverScreen.style.display = "block";
+    }
+
+    displayRecipe() {
+        if (!this.elementRecipeName || !this.elementRecipeIngredients) return;
+
+        const ingr = this.recipe.ingredientsAll;
+        const recipeDisplay = this.recipe.recipe;
+        this.elementRecipeName.innerText = `${recipeDisplay.name}`;
         this.elementRecipeIngredients.innerHTML = "";
-        this.recipe.ingredients.forEach((ingredient) => {
+
+        ingr.forEach(ingredient => {
             const liLine = document.createElement("li");
-            liLine.innerText = `${ingredient.name}: ${ingredient.collected}/${ingredient.quantityNeeded}`;
+            liLine.innerText = `${ingredient.name}: ${ingredient.collected} / ${ingredient.quantityNeeded}`;
             this.elementRecipeIngredients.appendChild(liLine);
         });
     }
