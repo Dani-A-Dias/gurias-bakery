@@ -1,6 +1,6 @@
 # Guria's Bakery
 
-[Click here to see deployed game](http://github.com)
+[Click here to see deployed game](https://dani-a-dias.github.io/gurias-bakery/)
 
 ## Description
 Guria's Bakery is a fun and engaging game where you control Guria, an adorable cat baker. Your objective is to help Guria collect ingredients falling from the sky to bake delicious cookies. The game features various levels of difficulty, different backgrounds, and an increasing challenge as you progress.
