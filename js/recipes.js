@@ -93,7 +93,7 @@ class Ingredient {
         this.name = name;
         this.points = points;
         this.quantityNeeded = quantityNeeded;
-        this.collected = 0; // Inicialize como 0
+        this.collected = 0;
         this.speed = speed;
         this.width = 50;
         this.height = 50;

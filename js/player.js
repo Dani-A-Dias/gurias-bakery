@@ -47,6 +47,23 @@ class Player {
         this.element.src = newImgSrc;
     }
 
+    IngredientCaught(ingredient) {      
+      const playerRect = this.element.getBoundingClientRect();
+      const obstacleRect = ingredient.element.getBoundingClientRect();
+  
+      if (
+          playerRect.left < obstacleRect.right &&
+          playerRect.right > obstacleRect.left &&
+          playerRect.top < obstacleRect.bottom &&
+          playerRect.bottom > obstacleRect.top
+      ) {
+          return true;
+      } else {
+          return false;
+      }
+  }
+
+
     
   }
   

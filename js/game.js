@@ -19,6 +19,7 @@ class Game {
         this.ingredients = [];
         this.elementRecipeName = document.getElementById("recipe");
         this.elementRecipeIngredients = document.getElementById("ingredients");
+        this.scoreTotal = document.getElementById("score")
 
         this.setRecipe(this.levelChoice.selectedLevel);
         this.displayRecipe();
@@ -65,6 +66,7 @@ class Game {
 
         this.update();
         this.displayRecipe();
+        this.updateDisplayRecipe()
 
         if (this.isGameOver) {
             clearInterval(this.gameIntervalId);
@@ -73,7 +75,18 @@ class Game {
 
     update() {
         this.player.move();
-        this.ingredients.forEach(ingredient => ingredient.updatePosition());
+        this.ingredients.forEach(ingredient => {
+            ingredient.updatePosition();
+            
+            if (this.player.IngredientCaught(ingredient)) {                
+                this.score += ingredient.points;
+                this.scoreTotal.innerText = this.score;
+                ingredient.collect(); 
+                this.updateIngredientCounter(ingredient.name); 
+                ingredient.remove(); 
+            }
+        });
+        
         this.removeOffscreenIngredients();
     }
 
@@ -92,12 +105,26 @@ class Game {
 
     removeOffscreenIngredients() {
         this.ingredients = this.ingredients.filter(ingredient => {
-            if (ingredient.top > this.gameScreen.clientHeight || this.isGameOver) {
+            if (ingredient.top > 650) {
+                if(!ingredient.collected){                    
+                this.score -=10
+                this.scoreTotal.innerText = this.score;
+                }
                 ingredient.remove();
                 return false;
+            }else if(this.isGameOver){
+                ingredient.remove();
             }
             return true;
         });
+    }
+
+    updateIngredientCounter(ingredientName) {
+        const ingr = this.recipe.ingredientsAll.find(ingr => ingr.name === ingredientName);
+        if (ingr) {
+            ingr.collected++; 
+            this.displayRecipe(); 
+        }
     }
 
     endGame() {
@@ -116,6 +143,17 @@ class Game {
         this.elementRecipeName.innerText = `${recipeDisplay.name}`;
         this.elementRecipeIngredients.innerHTML = "";
 
+        ingr.forEach(ingredient => {
+            const liLine = document.createElement("li");
+            liLine.innerText = `${ingredient.name}: ${ingredient.collected} / ${ingredient.quantityNeeded}`;
+            this.elementRecipeIngredients.appendChild(liLine);
+        });
+    }
+
+    updateDisplayRecipe() {
+        if (!this.elementRecipeIngredients) return;
+        this.elementRecipeIngredients.innerHTML = "";
+        const ingr = this.recipe.ingredientsAll;
         ingr.forEach(ingredient => {
             const liLine = document.createElement("li");
             liLine.innerText = `${ingredient.name}: ${ingredient.collected} / ${ingredient.quantityNeeded}`;
