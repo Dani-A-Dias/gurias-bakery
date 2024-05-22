@@ -9,7 +9,9 @@ class Game {
         this.player = new Player(this.gameScreen, "./images/guria1.png");
         this.height = 700;
         this.width = 960;
-        this.timer = 60000; // 60 seconds for the game duration - only while testing
+        this.timeDefault = 120; // 180 seconds for the game duration - only while testing
+        this.timerElement = document.getElementById("timer")
+        this.timerIntervalId = null;
         this.score = 0;
         this.isGameOver = false;
         this.gameIntervalId = null;
@@ -30,21 +32,21 @@ class Game {
     }
 
     start() {
-        if (!this.levelChoice.selectedLevel) {
-            this.setDefaultRecipe();
-        } else {
-            this.setRecipe(this.levelChoice.selectedLevel);
-        }
-        this.gameScreen.style.height = `${this.height}px`;
-        this.gameScreen.style.width = `${this.width}px`;
-        this.startScreen.style.display = "none";
-        this.gameOverScreenGood.style.display = "none";
-        this.gameContainer.style.display = "flex";
-        this.gameScreen.style.display = "block";
-        this.startTime = Date.now();
-        this.gameIntervalId = setInterval(() => this.gameLoop(), this.gameLoopFrequency);
-        this.displayRecipe();
+    if (!this.levelChoice.selectedLevel) {
+        this.setDefaultRecipe();
+    } else {
+        this.setRecipe(this.levelChoice.selectedLevel);
     }
+    this.gameScreen.style.height = `${this.height}px`;
+    this.gameScreen.style.width = `${this.width}px`;
+    this.startScreen.style.display = "none";
+    this.gameOverScreenGood.style.display = "none";
+    this.gameContainer.style.display = "flex";
+    this.gameScreen.style.display = "block";
+    this.setTimer(this.levelChoice.gameDuration || this.timeDefault); 
+    this.gameIntervalId = setInterval(() => this.gameLoop(), this.gameLoopFrequency);
+    this.displayRecipe();
+}
 
     setDefaultRecipe() {
         this.setRecipe("easy");
@@ -52,26 +54,45 @@ class Game {
 
     gameLoop() {
         const now = Date.now();
-        const elapsedTime = now - this.startTime;
-
-        if (elapsedTime >= this.timer) {
-            this.isGameOver = true;
-            this.endGame();
-            return;
-        }
-
+    
         if (now - this.lastIngredientTime > this.ingredientInterval) {
             this.createNewIngredient();
             this.lastIngredientTime = now;
         }
-
+    
         this.update();
         this.displayRecipe();
-        this.updateDisplayRecipe()
-
+        this.updateDisplayRecipe();
+    
         if (this.isGameOver) {
             clearInterval(this.gameIntervalId);
         }
+    }
+
+    setTimer(duration){        
+       let timeRemanining=duration;
+       this.updateTimerDisplay(timeRemanining);
+        
+       this.timerIntervalId = setInterval(()=>{
+            if(timeRemanining > 0){
+                timeRemanining--
+                this.updateTimerDisplay(timeRemanining);
+                
+            }else{
+                clearInterval(this.timerIntervalId)
+                this.isGameOver = true;
+                this.endGame();
+                return;
+            }
+        },1000)
+        
+        
+    }
+
+    updateTimerDisplay(timeOfGame){
+        const minutes = Math.floor(timeOfGame / 60).toString().padStart(2, "0");
+        const seconds = (timeOfGame % 60).toString().padStart(2, "0");
+        this.timerElement.innerText = `${minutes}:${seconds}`;
     }
 
     update() {
@@ -173,7 +194,7 @@ class Game {
     }
 
     gameWon(){
-        clearInterval(this.gameIntervalId)
+        clearInterval(this.timerIntervalId);
         this.removeOffscreenIngredients();
         this.gameContainer.style.display = "none";
         this.gameScreen.style.display = "none";
