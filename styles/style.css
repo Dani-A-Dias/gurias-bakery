@@ -15,7 +15,7 @@ body {
 
 h1, h2, h3 {
   font-family: 'Amatic SC', cursive;
-  color: #fdb6b6; 
+  color: #fdb6b6; /*#fdb6b6*/
   font-weight: 900;
 }
 
@@ -79,8 +79,10 @@ button:hover {
   border-radius: 5px;
   background:  #f4dbd6;
   height:fit-content;
-  text-align: justify;
-  margin: 1vw;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+
 }
 
 #game-screen {
@@ -128,6 +130,8 @@ font-size: 2em;
 
 #game-over-good{
   display: none;
+  width: 960px;
+  height: 700px;
   background-image:url("../images/game-over-good.png")
 }
 
@@ -191,6 +195,10 @@ font-size: 2em;
   cursor: pointer;
   border-radius: 5px;
   font-weight: bold;
+}
+
+#select-lvl button:hover{
+  background-color: #e56d89;
 }
 
 #select-lvl img{

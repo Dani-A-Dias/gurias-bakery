@@ -3,13 +3,16 @@ window.onload = function () {
 	const startButton = document.getElementById('start-button');
 	const restartButton = document.getElementById('restart-button');
 	const returnButton = document.getElementById('return-button');
+	const gameWonButton = document.getElementById("won-button");
 	const selectLevel = document.getElementById('select-level-button');
 	const highScores = document.getElementById('game-score-button');
+	const highScoreWon = document.getElementById("higscore-button")
+	const newGameStart = document.getElementById("new-start-button")
 	const newGame = new Game();
 	const myLevel = new Level();
 	//const selectlvl = new Level();
 
-	//Event listeners
+	//Event listeners - Menu
 	startButton.addEventListener('click', function () {
 		console.log('Start Button was pressed');
         startGame()
@@ -30,6 +33,26 @@ window.onload = function () {
 	restartButton.addEventListener('click', () => {
 		location.reload();
 	});
+
+	//Event listeners - Game Won
+
+	gameWonButton.addEventListener("click", ()=>{
+		console.log("Won btn pressed")
+		location.reload();
+	})
+
+	highScoreWon.addEventListener("click", ()=>{
+		console.log("Won highscore btn pressed")
+		
+	})
+
+	newGameStart.addEventListener("click", ()=>{
+		console.log("Won new game btn pressed")
+	
+		startGame()
+	})
+
+	//Event listeners - move player
 
 	document.addEventListener('keydown', (event) => {
 		//console.log('a key was pressed', event);

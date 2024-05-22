@@ -13,11 +13,20 @@ class Level {
         const hardMode = document.getElementById("lvl3-button");
         const gameBackImage = document.getElementById("game-container");
         const gameSmallImage = document.getElementById("smallImgBack");
+        const containerDivs = document.querySelectorAll('#game-container div');
+        const containerH2 = document.querySelectorAll('#game-container h2');
 
         easyMode.addEventListener("click", () => {
             //console.log("1lvl pressed");
             this.textDescriptionLevel.innerText = "Level 1: Less ingredients to catch but more time to do it!";
             gameBackImage.style.backgroundImage = "url('../images/kitchenlevel.png')";
+            containerDivs.forEach(containerDiv => {
+                containerDiv.style.border = '2px solid #e56d89';
+                containerDiv.style.background = '#f4dbd6';
+            });
+            containerH2.forEach((textH2)=>{
+                textH2.style.color = "#fdb6b6"
+            });
             gameSmallImage.src = "images/kitchenlevel.png";
             this.selectedLevel = 'easy'; 
         });
@@ -26,6 +35,13 @@ class Level {
             //console.log("2lvl btn pressed");
             this.textDescriptionLevel.innerText = "Level 2: You need more ingredients to make your recipe but you still have plenty of time to do it!";
             gameBackImage.style.backgroundImage = "url('../images/streetlevel.png')";
+            containerDivs.forEach(containerDiv => {
+                containerDiv.style.border = '2px solid #438646';
+                containerDiv.style.background = '#b3d8bc';
+            });
+            containerH2.forEach((textH2)=>{
+                textH2.style.color = "#438646"
+            });
             gameSmallImage.src = "images/streetlevel.png";
             this.selectedLevel = 'medium'; 
         });
@@ -34,6 +50,13 @@ class Level {
             //console.log("3lvl btn pressed");
             this.textDescriptionLevel.innerText = "Level 3: Let's make some cat-sushi! You have less time, but double the fun!";
             gameBackImage.style.backgroundImage = "url('../images/waterlevel.png')";
+            containerDivs.forEach(containerDiv => {
+                containerDiv.style.border = '2px solid #174981';
+                containerDiv.style.background = '#b8e3ff';
+            });
+            containerH2.forEach((textH2)=>{
+                textH2.style.color = "#174981"
+            });
             gameSmallImage.src = "images/waterlevel.png";
             this.selectedLevel = 'hard'; 
         });

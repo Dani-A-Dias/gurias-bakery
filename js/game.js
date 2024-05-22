@@ -9,14 +9,13 @@ class Game {
         this.player = new Player(this.gameScreen, "./images/guria1.png");
         this.height = 700;
         this.width = 960;
-        this.timer = 60000; // 30 seconds for the game duration
+        this.timer = 60000; // 60 seconds for the game duration - only while testing
         this.score = 0;
-        this.lives = 7;
         this.isGameOver = false;
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
         this.lastIngredientTime = 0;
-        this.ingredientInterval = 1500; // create a new ingredient every 2 seconds
+        this.ingredientInterval = 2000; // create a new ingredient every 2 seconds
         this.ingredients = [];
         this.elementRecipeName = document.getElementById("recipe");
         this.elementRecipeIngredients = document.getElementById("ingredients");
@@ -39,6 +38,7 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`;
         this.gameScreen.style.width = `${this.width}px`;
         this.startScreen.style.display = "none";
+        this.gameOverScreenGood.style.display = "none";
         this.gameContainer.style.display = "flex";
         this.gameScreen.style.display = "block";
         this.startTime = Date.now();
@@ -87,12 +87,11 @@ class Game {
                 ingredient.remove(); 
             }
 
-            if(ingredient.quantityComplete()){
-
-            }
+          
         });
         
         this.removeOffscreenIngredients();
+        this.checkIfAllIngredientsCollected();
     }
 
     createNewIngredient() {
@@ -132,6 +131,13 @@ class Game {
         }
     }
 
+    checkIfAllIngredientsCollected() {
+        const allCollected = this.recipe.ingredientsAll.every(ingredient => ingredient.collected >= ingredient.quantityNeeded);
+        if (allCollected) {
+            this.gameWon();
+        }
+    }
+
     endGame() {
         console.log("Game Over");
         this.removeOffscreenIngredients();
@@ -167,6 +173,7 @@ class Game {
     }
 
     gameWon(){
+        clearInterval(this.gameIntervalId)
         this.removeOffscreenIngredients();
         this.gameContainer.style.display = "none";
         this.gameScreen.style.display = "none";
