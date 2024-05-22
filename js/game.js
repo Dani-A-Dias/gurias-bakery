@@ -5,7 +5,7 @@ class Game {
         this.gameScreen = document.getElementById("game-screen");
         this.gameOverScreen = document.getElementById("game-over");
         this.levelChoice = new Level();
-        this.player = new Player(this.gameScreen, "../images/guria1.png");
+        this.player = new Player(this.gameScreen, "./images/guria1.png");
         this.height = 700;
         this.width = 960;
         this.timer = 30000; // 30 seconds for the game duration
@@ -15,7 +15,7 @@ class Game {
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
         this.lastIngredientTime = 0;
-        this.ingredientInterval = 2000; // create a new ingredient every 2 seconds
+        this.ingredientInterval = 1500; // create a new ingredient every 2 seconds
         this.ingredients = [];
         this.elementRecipeName = document.getElementById("recipe");
         this.elementRecipeIngredients = document.getElementById("ingredients");
@@ -159,5 +159,9 @@ class Game {
             liLine.innerText = `${ingredient.name}: ${ingredient.collected} / ${ingredient.quantityNeeded}`;
             this.elementRecipeIngredients.appendChild(liLine);
         });
+    }
+
+    gameWon(){
+
     }
 }

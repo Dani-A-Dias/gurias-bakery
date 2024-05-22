@@ -3,29 +3,29 @@ const recipes = {
         {
             name: "Banana Bread",
             ingredients: {
-                "Banana": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/banana.png" },
-                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/flour.png" },
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/egg.png" },
-                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/butter.png" },
-                "Honey": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/honey.png" }
+                "Banana": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/banana.png" },
+                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/flour.png" },
+                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" },
+                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/butter.png" },
+                "Honey": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/honey.png" }
             }
         },
         {
             name: "Honey Biscuits",
             ingredients: {
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/egg.png" },
-                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/flour.png" },
-                "Honey": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/honey.png" },
-                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/butter.png" }
+                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" },
+                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/flour.png" },
+                "Honey": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/honey.png" },
+                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/butter.png" }
             }
         },
         {
             name: "Sweet Muffins",
             ingredients: {
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/egg.png" },
-                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/flour.png" },
-                "Banana": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/banana.png" },
-                "Honey": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/honey.png" }
+                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" },
+                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/flour.png" },
+                "Banana": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/banana.png" },
+                "Honey": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/honey.png" }
             }
         }
     ],
@@ -33,28 +33,28 @@ const recipes = {
         {
             name: "Chicken Dumplings",
             ingredients: {
-                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/flour.png" },
-                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/butter.png" },
-                "Chicken": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/chicken.png" },
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/egg.png" }
+                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/flour.png" },
+                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/butter.png" },
+                "Chicken": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/chicken.png" },
+                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" }
             }
         },
         {
             name: "Spring Rolls",
             ingredients: {
-                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/flour.png" },
-                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/butter.png" },
-                "Carrot": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/carrot.png" },
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/egg.png" }
+                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/flour.png" },
+                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/butter.png" },
+                "Carrot": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/carrot.png" },
+                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" }
             }
         },
         {
             name: "Fried Rice",
             ingredients: {
-                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/rice.png" },
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/egg.png" },
-                "Carrot": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/carrot.png" },
-                "Chicken": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/chicken.png" }
+                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/rice.png" },
+                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" },
+                "Carrot": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/carrot.png" },
+                "Chicken": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/chicken.png" }
             }
         }
     ],
@@ -62,27 +62,27 @@ const recipes = {
         {
             name: "Sushi",
             ingredients: {
-                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/rice.png" },
-                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/salmon.png" },
-                "Seaweed": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/seaweed.png" },
-                "Cucumber": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/cucumber.png" }
+                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/rice.png" },
+                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/salmon.png" },
+                "Seaweed": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/seaweed.png" },
+                "Cucumber": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/cucumber.png" }
             }
         },
         {
             name: "Sashimi",
             ingredients: {
-                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/salmon.png" },
-                "Tuna": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/tuna.png" }
+                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/salmon.png" },
+                "Tuna": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/tuna.png" }
             }
         },
         {
             name: "Nigiri",
             ingredients: {
-                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/rice.png" },
-                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/salmon.png" },
-                "Tuna": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/tuna.png" },
-                "Seaweed": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/seaweed.png" },
-                "Cucumber": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "../images/cucumber.png" }
+                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/rice.png" },
+                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/salmon.png" },
+                "Tuna": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/tuna.png" },
+                "Seaweed": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/seaweed.png" },
+                "Cucumber": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/cucumber.png" }
             }
         }
     ]
