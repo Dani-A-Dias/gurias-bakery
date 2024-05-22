@@ -39,7 +39,7 @@
           </div>
           </div>
         </div>
-        <div id="select-lvl" style="display:none;">
+        <div id="select-lvl">
           <h2>Select Level</h2>
             <div id="slct-lvl-btn">
           <button id="lvl1-button">Easy Mode</button><br>
@@ -52,8 +52,20 @@
           <img id="smallImgBack" src="images/kitchenlevel.png" alt="kitchen">
           <button id="return-button">Return</button><br>
         </div>
-        <div id="game-over" style="display:none;">
-          <h1>Oh no!</h1>
+        <div id="game-over">
+          <div class="bad-game-over-style">
+            <h1>Oh no!</h1>
+            <p>Look's like you didn't bake it on time!</p>
+          <br />
+          <button id="restart-button">Let's bake again?</button>
+          </div>
+          <div>
+            <span> </span>
+          </div>
+          
+        </div>
+        <div id="game-over-good">
+          <h1>Hurray!</h1>
           <br />
           <button id="restart-button">Let's bake again?</button>
         </div>

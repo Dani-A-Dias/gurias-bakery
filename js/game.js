@@ -4,11 +4,12 @@ class Game {
         this.gameContainer = document.getElementById("game-container");
         this.gameScreen = document.getElementById("game-screen");
         this.gameOverScreen = document.getElementById("game-over");
+        this.gameOverScreenGood = document.getElementById("game-over-good");
         this.levelChoice = new Level();
         this.player = new Player(this.gameScreen, "./images/guria1.png");
         this.height = 700;
         this.width = 960;
-        this.timer = 30000; // 30 seconds for the game duration
+        this.timer = 60000; // 30 seconds for the game duration
         this.score = 0;
         this.lives = 7;
         this.isGameOver = false;
@@ -85,6 +86,10 @@ class Game {
                 this.updateIngredientCounter(ingredient.name); 
                 ingredient.remove(); 
             }
+
+            if(ingredient.quantityComplete()){
+
+            }
         });
         
         this.removeOffscreenIngredients();
@@ -132,7 +137,7 @@ class Game {
         this.removeOffscreenIngredients();
         this.gameContainer.style.display = "none";
         this.gameScreen.style.display = "none";
-        this.gameOverScreen.style.display = "block";
+        this.gameOverScreen.style.display = "flex";
     }
 
     displayRecipe() {
@@ -162,6 +167,11 @@ class Game {
     }
 
     gameWon(){
+        this.removeOffscreenIngredients();
+        this.gameContainer.style.display = "none";
+        this.gameScreen.style.display = "none";
+        this.gameOverScreen.style.display = "none";
+        this.gameOverScreenGood.style.display = "block";
 
     }
 }
