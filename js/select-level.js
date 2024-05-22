@@ -15,7 +15,7 @@ class Level {
         const gameSmallImage = document.getElementById("smallImgBack");
 
         easyMode.addEventListener("click", () => {
-            console.log("1lvl pressed");
+            //console.log("1lvl pressed");
             this.textDescriptionLevel.innerText = "Level 1: Less ingredients to catch but more time to do it!";
             gameBackImage.style.backgroundImage = "url('../images/kitchenlevel.png')";
             gameSmallImage.src = "images/kitchenlevel.png";
@@ -23,7 +23,7 @@ class Level {
         });
 
         mediumMode.addEventListener("click", () => {
-            console.log("2lvl btn pressed");
+            //console.log("2lvl btn pressed");
             this.textDescriptionLevel.innerText = "Level 2: You need more ingredients to make your recipe but you still have plenty of time to do it!";
             gameBackImage.style.backgroundImage = "url('../images/streetlevel.png')";
             gameSmallImage.src = "images/streetlevel.png";
@@ -31,7 +31,7 @@ class Level {
         });
 
         hardMode.addEventListener("click", () => {
-            console.log("3lvl btn pressed");
+            //console.log("3lvl btn pressed");
             this.textDescriptionLevel.innerText = "Level 3: Let's make some cat-sushi! You have less time, but double the fun!";
             gameBackImage.style.backgroundImage = "url('../images/waterlevel.png')";
             gameSmallImage.src = "images/waterlevel.png";

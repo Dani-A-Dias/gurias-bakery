@@ -14,8 +14,7 @@ class Game {
         this.isGameOver = false;
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
-        
-        // Definindo os elementos após o carregamento da página
+
         this.elementRecipeName = document.getElementById("recipe");
         this.elementRecipeIngredients = document.getElementById("ingredients");
         this.setRecipe(this.levelChoice.selectedLevel);
@@ -23,7 +22,7 @@ class Game {
     }
 
     setRecipe(level) {
-        this.recipe = new Recipe(level);
+        this.recipe = new Recipe(level, this.gameContainer);
     }
 
     start() {
@@ -78,8 +77,7 @@ class Game {
         if (!this.elementRecipeIngredients) {
             return;
         }
-        this.elementRecipeIngredients.innerHTML = ""; // Clear existing list
-
+        this.elementRecipeIngredients.innerHTML = "";
         this.recipe.ingredients.forEach((ingredient) => {
             const liLine = document.createElement("li");
             liLine.innerText = `${ingredient.name}: ${ingredient.collected}/${ingredient.quantityNeeded}`;
