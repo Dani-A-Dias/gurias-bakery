@@ -210,7 +210,7 @@ class Game {
     }
 
     //HighScores Dealing
-    highScoresDeal(){
+    highScoresDeal() {
         const highScoreStorage = localStorage.getItem("high-score-list");
         if (!highScoreStorage) {
             localStorage.setItem("high-score-list", this.score);
@@ -219,18 +219,30 @@ class Game {
             listOfScores.push(this.score);
             listOfScores.sort((a, b) => b - a);
             const topTenScores = listOfScores.slice(0, 10);
-            this.highScore.innerHTML = "";
-            for (let i = 0; i < topTenScores.length; i++) {
-                const liElem = document.createElement("li");
-                liElem.innerText = topTenScores[i];
-                this.highScore.appendChild(liElem);
-            }
-            localStorage.setItem("high-score-list", topTenScores);
+            localStorage.setItem("high-score-list", topTenScores.join(","));
+            this.displayHighScores(topTenScores);
+        }
+    }
+
+    displayHighScores(scores) {
+        this.highScore.innerHTML = "";
+        scores.forEach(score => {
+            const liElem = document.createElement("li");
+            liElem.innerText = score;
+            this.highScore.appendChild(liElem);
+        });
+    }
+
+    loadHighScores() {
+        const highScoreStorage = localStorage.getItem("high-score-list");
+        if (highScoreStorage) {
+            const listOfScores = highScoreStorage.split(",").map(Number);
+            this.displayHighScores(listOfScores);
         }
     }
 
     openHighScore(){
-    this.highScoresDeal()
+    this.loadHighScores()
     this.startScreen.style.display = "none";
     this.gameOverScreenGood.style.display = "none";
     this.gameContainer.style.display = "none";

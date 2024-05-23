@@ -316,11 +316,10 @@ font-size: 2em;
   width:60%;
   height:60%;
   margin: auto;
-  text-align: center;
+  
 }
 #high-score-list li{
-  margin:auto;
-  padding-left: 0;
-  width: fit-content;
+  margin: 0 auto;
+  padding-left: 0;  
   font-weight:600;
   }
