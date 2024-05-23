@@ -3,29 +3,29 @@ const recipes = {
         {
             name: "Banana Bread",
             ingredients: {
-                "Banana": { points: 50, quantityNeeded: 10, speed: 4, imageIngr: "./images/banana.png" },
-                "Flour": { points: 50, quantityNeeded: 10, speed: 4, imageIngr: "./images/flour.png" },
-                "Egg": { points: 50, quantityNeeded: 10, speed: 4, imageIngr: "./images/egg.png" },
-                "Butter": { points: 50, quantityNeeded: 10, speed: 4, imageIngr: "./images/butter.png" },
-                "Honey": { points: 50, quantityNeeded: 10, speed: 4, imageIngr: "./images/honey.png" }
+                "Banana": { points: 50, quantityNeeded: 3, speed: 4, imageIngr: "./images/banana.png" },
+                "Flour": { points: 50, quantityNeeded: 3, speed: 5, imageIngr: "./images/flour.png" },
+                "Eggs": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" },
+                "Butter": { points: 100, quantityNeeded: 5, speed: 6, imageIngr: "./images/butter.png" },
+                "Honey": { points: 50, quantityNeeded: 4, speed: 5, imageIngr: "./images/honey.png" }
             }
         },
         {
             name: "Honey Biscuits",
             ingredients: {
-                "Egg": { points: 50, quantityNeeded: 1, speed: 4, imageIngr: "./images/egg.png" },
-                "Flour": { points: 50, quantityNeeded: 1, speed: 4, imageIngr: "./images/flour.png" },
-                "Honey": { points: 50, quantityNeeded: 1, speed: 4, imageIngr: "./images/honey.png" },
-                "Butter": { points: 50, quantityNeeded: 1, speed: 4, imageIngr: "./images/butter.png" }
+                "Egg": { points: 50, quantityNeeded: 5, speed: 5, imageIngr: "./images/egg.png" },
+                "Flour": { points: 50, quantityNeeded: 5, speed: 4, imageIngr: "./images/flour.png" },
+                "Honey": { points: 50, quantityNeeded: 5, speed: 3, imageIngr: "./images/honey.png" },
+                "Butter": { points: 50, quantityNeeded: 5, speed: 5, imageIngr: "./images/butter.png" }
             }
         },
         {
             name: "Sweet Muffins",
             ingredients: {
-                "Egg": { points: 50, quantityNeeded: 1, speed: 4, imageIngr: "./images/egg.png" },
-                "Flour": { points: 50, quantityNeeded: 1, speed: 4, imageIngr: "./images/flour.png" },
-                "Banana": { points: 50, quantityNeeded: 1, speed: 4, imageIngr: "./images/banana.png" },
-                "Honey": { points: 50, quantityNeeded: 1, speed: 4, imageIngr: "./images/honey.png" }
+                "Egg": { points: 75, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" },
+                "Flour": { points: 75, quantityNeeded: 5, speed: 5, imageIngr: "./images/flour.png" },
+                "Banana": { points: 50, quantityNeeded: 7, speed: 6, imageIngr: "./images/banana.png" },
+                "Honey": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/honey.png" }
             }
         }
     ],
@@ -33,28 +33,28 @@ const recipes = {
         {
             name: "Chicken Dumplings",
             ingredients: {
-                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/flour.png" },
-                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/butter.png" },
-                "Chicken": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/chicken.png" },
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" }
+                "Flour": { points: 75, quantityNeeded: 6, speed: 5, imageIngr: "./images/flour.png" },
+                "Butter": { points: 75, quantityNeeded: 5, speed: 5, imageIngr: "./images/butter.png" },
+                "Chicken": { points: 100, quantityNeeded: 3, speed: 5, imageIngr: "./images/chicken.png" },
+                "Egg": { points: 50, quantityNeeded: 7, speed: 5, imageIngr: "./images/egg.png" }
             }
         },
         {
             name: "Spring Rolls",
             ingredients: {
-                "Flour": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/flour.png" },
-                "Butter": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/butter.png" },
-                "Carrot": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/carrot.png" },
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" }
+                "Flour": { points: 50, quantityNeeded: 7, speed: 5, imageIngr: "./images/flour.png" },
+                "Butter": { points: 75, quantityNeeded: 5, speed: 6, imageIngr: "./images/butter.png" },
+                "Carrot": { points: 50, quantityNeeded: 8, speed: 6, imageIngr: "./images/carrot.png" },
+                "Egg": { points: 75, quantityNeeded: 6, speed: 4, imageIngr: "./images/egg.png" }
             }
         },
         {
             name: "Fried Rice",
             ingredients: {
-                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/rice.png" },
-                "Egg": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/egg.png" },
-                "Carrot": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/carrot.png" },
-                "Chicken": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/chicken.png" }
+                "Rice": { points: 100, quantityNeeded: 3, speed: 4, imageIngr: "./images/rice.png" },
+                "Egg": { points: 75, quantityNeeded: 7, speed: 4, imageIngr: "./images/egg.png" },
+                "Carrot": { points: 75, quantityNeeded: 7, speed: 4, imageIngr: "./images/carrot.png" },
+                "Chicken": { points: 75, quantityNeeded: 7, speed: 4, imageIngr: "./images/chicken.png" }
             }
         }
     ],
@@ -62,27 +62,27 @@ const recipes = {
         {
             name: "Sushi",
             ingredients: {
-                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/rice.png" },
-                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/salmon.png" },
-                "Seaweed": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/seaweed.png" },
-                "Cucumber": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/cucumber.png" }
+                "Rice": { points: 150, quantityNeeded: 5, speed: 6, imageIngr: "./images/rice.png" },
+                "Salmon": { points: 100, quantityNeeded: 7, speed: 6, imageIngr: "./images/salmon.png" },
+                "Seaweed": { points: 100, quantityNeeded: 7, speed: 6, imageIngr: "./images/seaweed.png" },
+                "Cucumber": { points: 75, quantityNeeded: 9, speed: 6, imageIngr: "./images/cucumber.png" }
             }
         },
         {
             name: "Sashimi",
             ingredients: {
-                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/salmon.png" },
-                "Tuna": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/tuna.png" }
+                "Salmon": { points: 150, quantityNeeded: 7, speed: 7, imageIngr: "./images/salmon.png" },
+                "Tuna": { points: 150, quantityNeeded: 7, speed: 7, imageIngr: "./images/tuna.png" }
             }
         },
         {
             name: "Nigiri",
             ingredients: {
-                "Rice": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/rice.png" },
-                "Salmon": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/salmon.png" },
-                "Tuna": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/tuna.png" },
-                "Seaweed": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/seaweed.png" },
-                "Cucumber": { points: 50, quantityNeeded: 4, speed: 4, imageIngr: "./images/cucumber.png" }
+                "Rice": { points: 150, quantityNeeded: 5, speed: 7, imageIngr: "./images/rice.png" },
+                "Salmon": { points: 100, quantityNeeded: 5, speed: 5, imageIngr: "./images/salmon.png" },
+                "Tuna": { points: 75, quantityNeeded: 7, speed: 6, imageIngr: "./images/tuna.png" },
+                "Seaweed": { points: 100, quantityNeeded: 7, speed: 5, imageIngr: "./images/seaweed.png" },
+                "Cucumber": { points: 75, quantityNeeded: 8, speed: 6, imageIngr: "./images/cucumber.png" }
             }
         }
     ]
@@ -99,7 +99,7 @@ class Ingredient {
         this.height = 50;
         this.marginWidth = this.calculateMarginWidth();
         this.finalMarginW = this.marginWidth / 2;
-        this.left = (30 + this.finalMarginW) + Math.random() * ((900 + this.finalMarginW) - (30 + this.finalMarginW));
+        this.left = (140 + this.finalMarginW) + Math.random() * ((770 + this.finalMarginW) - (150 + this.finalMarginW));
         this.top = 0;
         this.element = document.createElement("img");
         this.element.src = imageIngr;
@@ -154,7 +154,7 @@ class Recipe {
         return randomRecipes[randomIndex];
     }
 
-    initIngredients() {
+    initIngredients() { //this is the love of my life
         const ingredients = this.recipe.ingredients;
         return Object.keys(ingredients).map(name => ({
             name,
