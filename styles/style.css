@@ -80,9 +80,23 @@ button:hover {
   background:  #f4dbd6;
   height:fit-content;
   text-align: center;
-  margin: 5px;
-  padding: 10px;
+  margin: 0 5px;
+  padding: 5px 10px;
 
+}
+
+#game-container p{
+  margin-bottom: 0px;
+}
+
+#game-container h2{
+  font-size: 2em;
+  margin: auto;
+}
+
+#game-container ul{
+  list-style: none;
+  padding-left: 0px;
 }
 
 #game-screen {
