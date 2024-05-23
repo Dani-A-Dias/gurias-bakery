@@ -21,7 +21,7 @@ class Level {
         easyMode.addEventListener("click", () => {
             //console.log("1lvl pressed");
             this.textDescriptionLevel.innerText = "Level 1: Less ingredients to catch but more time to do it!";
-            gameBackImage.style.backgroundImage = "url('../images/kitchenlevel.png')";
+            gameBackImage.style.backgroundImage = "url('./images/kitchenlevel.png')";
             this.gameDuration= 120
             containerDivs.forEach(containerDiv => {
                 containerDiv.style.border = '2px solid #e56d89';
@@ -37,7 +37,7 @@ class Level {
         mediumMode.addEventListener("click", () => {
             //console.log("2lvl btn pressed");
             this.textDescriptionLevel.innerText = "Level 2: You need more ingredients to make your recipe but you still have plenty of time to do it!";
-            gameBackImage.style.backgroundImage = "url('../images/streetlevel.png')";
+            gameBackImage.style.backgroundImage = "url('./images/streetlevel.png')";
             this.gameDuration= 100
             containerDivs.forEach(containerDiv => {
                 containerDiv.style.border = '2px solid #438646';
@@ -53,7 +53,7 @@ class Level {
         hardMode.addEventListener("click", () => {
             //console.log("3lvl btn pressed");
             this.textDescriptionLevel.innerText = "Level 3: Let's make some cat-sushi! You have less time, but double the fun!";
-            gameBackImage.style.backgroundImage = "url('../images/waterlevel.png')";
+            gameBackImage.style.backgroundImage = "url('./images/waterlevel.png')";
             this.gameDuration= 80
             containerDivs.forEach(containerDiv => {
                 containerDiv.style.border = '2px solid #174981';

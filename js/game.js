@@ -195,6 +195,7 @@ class Game {
 
     gameWon(){
         clearInterval(this.timerIntervalId);
+        clearInterval(this.gameIntervalId);
         this.removeOffscreenIngredients();
         this.gameContainer.style.display = "none";
         this.gameScreen.style.display = "none";
