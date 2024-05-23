@@ -5,6 +5,7 @@ class Game {
         this.gameScreen = document.getElementById("game-screen");
         this.gameOverScreen = document.getElementById("game-over");
         this.gameOverScreenGood = document.getElementById("game-over-good");
+        this.gameScoresList = document.getElementById("high-scores-room")
         this.levelChoice = new Level();
         this.player = new Player(this.gameScreen, "./images/guria1.png");
         this.height = 700;
@@ -13,6 +14,7 @@ class Game {
         this.timerElement = document.getElementById("timer")
         this.timerIntervalId = null;
         this.score = 0;
+        this.highScore = document.getElementById("high-score-list");
         this.isGameOver = false;
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
@@ -37,6 +39,8 @@ class Game {
     } else {
         this.setRecipe(this.levelChoice.selectedLevel);
     }
+    this.score = 0;
+    this.scoreTotal.innerText = this.score;
     this.gameScreen.style.height = `${this.height}px`;
     this.gameScreen.style.width = `${this.width}px`;
     this.startScreen.style.display = "none";
@@ -197,10 +201,40 @@ class Game {
         clearInterval(this.timerIntervalId);
         clearInterval(this.gameIntervalId);
         this.removeOffscreenIngredients();
+        this.highScoresDeal()
         this.gameContainer.style.display = "none";
         this.gameScreen.style.display = "none";
         this.gameOverScreen.style.display = "none";
         this.gameOverScreenGood.style.display = "block";
 
+    }
+
+    //HighScores Dealing
+    highScoresDeal(){
+        const highScoreStorage = localStorage.getItem("high-score-list");
+        if (!highScoreStorage) {
+            localStorage.setItem("high-score-list", this.score);
+        } else {
+            const listOfScores = highScoreStorage.split(",").map(Number);
+            listOfScores.push(this.score);
+            listOfScores.sort((a, b) => b - a);
+            const topTenScores = listOfScores.slice(0, 10);
+            this.highScore.innerHTML = "";
+            for (let i = 0; i < topTenScores.length; i++) {
+                const liElem = document.createElement("li");
+                liElem.innerText = topTenScores[i];
+                this.highScore.appendChild(liElem);
+            }
+            localStorage.setItem("high-score-list", topTenScores);
+        }
+    }
+
+    openHighScore(){
+    this.highScoresDeal()
+    this.startScreen.style.display = "none";
+    this.gameOverScreenGood.style.display = "none";
+    this.gameContainer.style.display = "none";
+    this.gameScreen.style.display = "none";
+    this.gameScoresList.style.display = "block";
     }
 }

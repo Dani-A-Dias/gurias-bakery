@@ -1,6 +1,7 @@
 class Level {
     constructor() {
         this.startScreen = document.getElementById("game-intro");
+        this.gameScoresList = document.getElementById("high-scores-room")
         this.selectLevelBackground = document.querySelector(".background-for-hs-sl");
         this.selectLevelScreen = document.getElementById("select-lvl");
         this.textDescriptionLevel = document.getElementById("level-text");
@@ -25,7 +26,7 @@ class Level {
             this.textDescriptionLevel.innerText = "Level 1: Less ingredients to catch but more time to do it!";
             gameBackImage.style.backgroundImage = "url('./images/kitchenlevel.png')";
             this.gameDuration= 120
-            this.ingredientInterval = 2000;
+            this.ingredientInterval = 1000;
             containerDivs.forEach(containerDiv => {
                 containerDiv.style.border = '2px solid #e56d89';
                 containerDiv.style.background = '#f4dbd6';
@@ -42,7 +43,7 @@ class Level {
             this.textDescriptionLevel.innerText = "Level 2: You need more ingredients to make your recipe but you still have plenty of time to do it!";
             gameBackImage.style.backgroundImage = "url('./images/streetlevel.png')";
             this.gameDuration= 100
-            this.ingredientInterval = 1000;
+            this.ingredientInterval = 400;
             containerDivs.forEach(containerDiv => {
                 containerDiv.style.border = '2px solid #438646';
                 containerDiv.style.background = '#b3d8bc';
@@ -59,7 +60,7 @@ class Level {
             this.textDescriptionLevel.innerText = "Level 3: Let's make some cat-sushi! You have less time, but double the fun!";
             gameBackImage.style.backgroundImage = "url('./images/waterlevel.png')";
             this.gameDuration= 80
-            this.ingredientInterval = 1500;
+            this.ingredientInterval = 10;
             containerDivs.forEach(containerDiv => {
                 containerDiv.style.border = '2px solid #174981';
                 containerDiv.style.background = '#b8e3ff';
@@ -74,6 +75,7 @@ class Level {
 
     openLevelMenu() {
         this.startScreen.style.display = "none";
+        this.gameScoresList.style.display = "none";
         this.selectLevelScreen.style.display = "flex";
         this.selectLevelBackground.style.display = "flex";
     }
@@ -81,6 +83,7 @@ class Level {
     returnMainScreen() {
         this.startScreen.style.display = "flex";
         this.selectLevelScreen.style.display = "none";
+        this.gameScoresList.style.display = "none";
         this.selectLevelBackground.style.display = "none";
     }
 }

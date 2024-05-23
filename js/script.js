@@ -7,10 +7,12 @@ window.onload = function () {
 	const selectLevel = document.getElementById('select-level-button');
 	const highScores = document.getElementById('game-score-button');
 	const highScoreWon = document.getElementById("higscore-button")
+	const highScoreReturnBtn = document.getElementById("return-button-scores")
 	const newGameStart = document.getElementById("new-start-button")
+
 	const newGame = new Game();
 	const myLevel = new Level();
-	//const selectlvl = new Level();
+
 
 	//Event listeners - Menu
 	startButton.addEventListener('click', function () {
@@ -29,7 +31,14 @@ window.onload = function () {
 
     highScores.addEventListener("click", ()=>{
         console.log("Check High Scores pressed")
+		openHighScores()
     })
+
+	highScoreReturnBtn.addEventListener("click", ()=>{
+		console.log("Return btn pressed")
+		returnMainMenu()
+	})
+
 	restartButton.addEventListener('click', () => {
 		location.reload();
 	});
@@ -43,6 +52,7 @@ window.onload = function () {
 
 	highScoreWon.addEventListener("click", ()=>{
 		console.log("Won highscore btn pressed")
+		openHighScores()
 		
 	})
 
@@ -105,6 +115,10 @@ window.onload = function () {
 	function openLevelMenuScreen(){
         myLevel.openLevelMenu()
     }
+
+	function openHighScores(){
+		newGame.openHighScore()
+	}
 
 
 };
