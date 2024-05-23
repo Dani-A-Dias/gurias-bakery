@@ -17,7 +17,7 @@ class Game {
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
         this.lastIngredientTime = 0;
-        this.ingredientInterval = this.levelChoice.ingredientInterval; // create a new ingredient every 2 seconds
+        this.ingredientInterval = this.levelChoice.ingredientInterval; // create a new ingredient every x seconds - it's a good soup
         this.ingredients = [];
         this.elementRecipeName = document.getElementById("recipe");
         this.elementRecipeIngredients = document.getElementById("ingredients");
