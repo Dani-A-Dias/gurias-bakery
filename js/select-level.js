@@ -1,6 +1,7 @@
 class Level {
     constructor() {
         this.startScreen = document.getElementById("game-intro");
+        this.selectLevelBackground = document.querySelector(".background-for-hs-sl");
         this.selectLevelScreen = document.getElementById("select-lvl");
         this.textDescriptionLevel = document.getElementById("level-text");
         this.selectedLevel = 'easy'; 
@@ -74,10 +75,12 @@ class Level {
     openLevelMenu() {
         this.startScreen.style.display = "none";
         this.selectLevelScreen.style.display = "flex";
+        this.selectLevelBackground.style.display = "flex";
     }
 
     returnMainScreen() {
         this.startScreen.style.display = "flex";
         this.selectLevelScreen.style.display = "none";
+        this.selectLevelBackground.style.display = "none";
     }
 }

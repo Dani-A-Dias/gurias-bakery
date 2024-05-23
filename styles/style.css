@@ -199,17 +199,29 @@ font-size: 2em;
  margin-bottom: 0;
 }
 
-#select-lvl{
+.background-for-hs-sl{
   display: none;
-  flex-direction: column;
-  font-size: 1.9em;
-  font-weight: bolder;
+  background: linear-gradient(to bottom, #fff8f9, #D8BFD8);
+  background-image: url("../images/highscoreback.png");
   width: 960px;
   height: 700px;
-  background: linear-gradient(to bottom, #fff8f9, #D8BFD8);
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+#select-lvl{
+  display: none;
+  width:90%;
+  height:90%;
+  background-color: #fcc9c880;
+  flex-direction: column;
+  font-size: 3em;
+  font-weight: bolder;  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid #333;
 
 
 }
@@ -219,15 +231,21 @@ font-size: 2em;
   width:70%;
 }
 
+#select-lvl h2{
+  color:#333;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
 #select-lvl p{
  margin: 10px auto;
   width:60%;
-  font-size: 0.7em;
+  font-size: 0.4em;
 }
 
 #select-lvl button{
   background-color: #fcc9c8;
-  border: 2px solid #000000;
+  border: 2px solid #333;
   color: #FFF;
   padding: 10px 15px;
   cursor: pointer;
@@ -245,6 +263,7 @@ font-size: 2em;
   margin-bottom: 1vw;
   width: 480px;
   height: 350px;
+  border: 2px solid #333;
 }
 
 .ingredient {
