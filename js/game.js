@@ -27,6 +27,12 @@ class Game {
 
         this.setRecipe(this.levelChoice.selectedLevel);
         this.displayRecipe();
+
+        this.backgroundMusic = this.levelChoice.getBackgroundMusic()
+        this.backgroundMusic.volume = 0.4;
+        this.catchIngredientSound = new Audio('assets/item-catched.mp3');
+        this.gameOverSound = new Audio('assets/sad-cat-lost.mp3');
+        this.gameWonSound = new Audio('assets/game-won-music.mp3');
     }
 
     setRecipe(level) {
@@ -50,6 +56,7 @@ class Game {
     this.setTimer(this.levelChoice.gameDuration || this.timeDefault); 
     this.gameIntervalId = setInterval(() => this.gameLoop(), this.gameLoopFrequency);
     this.displayRecipe();
+    this.backgroundMusic.play()
 }
 
     setDefaultRecipe() {
@@ -85,7 +92,7 @@ class Game {
             }else{
                 clearInterval(this.timerIntervalId)
                 this.isGameOver = true;
-                this.endGame();
+                this.endGame();                
                 return;
             }
         },1000)
@@ -110,6 +117,7 @@ class Game {
                 ingredient.collect(); 
                 this.updateIngredientCounter(ingredient.name); 
                 ingredient.remove(); 
+                this.catchIngredientSound.play()
             }
 
           
@@ -169,6 +177,10 @@ class Game {
         this.gameContainer.style.display = "none";
         this.gameScreen.style.display = "none";
         this.gameOverScreen.style.display = "flex";
+
+        this.backgroundMusic.pause()
+        this.backgroundMusic.currentTime = 0;
+        this.gameOverSound.play();
     }
 
     displayRecipe() {
@@ -206,6 +218,9 @@ class Game {
         this.gameScreen.style.display = "none";
         this.gameOverScreen.style.display = "none";
         this.gameOverScreenGood.style.display = "block";
+        this.backgroundMusic.pause();
+        this.backgroundMusic.currentTime = 0;
+        this.gameWonSound.play();
 
     }
 
