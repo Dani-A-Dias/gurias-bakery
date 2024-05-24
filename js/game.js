@@ -28,8 +28,7 @@ class Game {
         this.setRecipe(this.levelChoice.selectedLevel);
         this.displayRecipe();
 
-        this.backgroundMusic = this.levelChoice.getBackgroundMusic()
-        this.backgroundMusic.volume = 0.4;
+        this.backgroundMusic = null;        
         this.catchIngredientSound = new Audio('assets/item-catched.mp3');
         this.gameOverSound = new Audio('assets/sad-cat-lost.mp3');
         this.gameWonSound = new Audio('assets/game-won-music.mp3');
@@ -40,11 +39,15 @@ class Game {
     }
 
     start() {
+    this.isGameOver = false;
     if (!this.levelChoice.selectedLevel) {
         this.setDefaultRecipe();
     } else {
         this.setRecipe(this.levelChoice.selectedLevel);
     }
+    clearInterval(this.timerIntervalId);
+    clearInterval(this.gameIntervalId);
+    this.gameWonSound.pause();
     this.score = 0;
     this.scoreTotal.innerText = this.score;
     this.gameScreen.style.height = `${this.height}px`;
@@ -56,7 +59,15 @@ class Game {
     this.setTimer(this.levelChoice.gameDuration || this.timeDefault); 
     this.gameIntervalId = setInterval(() => this.gameLoop(), this.gameLoopFrequency);
     this.displayRecipe();
-    this.backgroundMusic.play()
+
+    if (this.backgroundMusic) {
+        this.backgroundMusic.pause();
+        this.backgroundMusic.currentTime = 0; // Reset music to the beginning, or else it wouldn't work. DO NOT CHANGE!
+    }
+    this.backgroundMusic = this.levelChoice.getBackgroundMusic();
+    this.backgroundMusic.volume = 0.4;
+    this.backgroundMusic.play();
+    
 }
 
     setDefaultRecipe() {

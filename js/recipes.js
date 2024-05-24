@@ -99,7 +99,7 @@ class Ingredient {
         this.height = 50;
         this.marginWidth = this.calculateMarginWidth();
         this.finalMarginW = this.marginWidth / 2;
-        this.left = (140 + this.finalMarginW) + Math.random() * ((770 + this.finalMarginW) - (150 + this.finalMarginW));
+        this.left = (140 + this.finalMarginW) + Math.random() * ((720 + this.finalMarginW) - (150 + this.finalMarginW));
         this.top = 0;
         this.element = document.createElement("img");
         this.element.src = imageIngr;

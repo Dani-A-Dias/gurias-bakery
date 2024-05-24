@@ -11,6 +11,8 @@ class Level {
         this.changeLevel(); 
         this.musicDefault =  new Audio('assets/kitchen-level-song.mp3');
         this.backMusic = this.musicDefault
+        this.levelTwoSong = new Audio('assets/streetlevelmusic.mp3');
+        this.levelThreeSong = new Audio('assets/water-level-song.mp3');
     }
 
     changeLevel() {
@@ -38,7 +40,7 @@ class Level {
             });
             gameSmallImage.src = "images/kitchenlevel.png";
             this.selectedLevel = 'easy'; 
-            this.backMusic = new Audio('assets/kitchen-level-song.mp3');
+            this.backMusic = this.musicDefault;
         });
 
         mediumMode.addEventListener("click", () => {
@@ -56,7 +58,7 @@ class Level {
             });
             gameSmallImage.src = "images/streetlevel.png";
             this.selectedLevel = 'medium'; 
-            this.backMusic = new Audio('assets/streetlevelmusic.mp3');
+            this.backMusic = this.levelTwoSong;
         });
 
         hardMode.addEventListener("click", () => {
@@ -74,7 +76,7 @@ class Level {
             });
             gameSmallImage.src = "images/waterlevel.png";
             this.selectedLevel = 'hard'; 
-            this.backMusic = new Audio('assets/water-level-song.mp3');
+            this.backMusic = this.levelThreeSong;
         });
     }
 
