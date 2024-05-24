@@ -19,7 +19,7 @@ class Game {
         this.gameIntervalId = null;
         this.gameLoopFrequency = 1000 / 60;
         this.lastIngredientTime = 0;
-        this.ingredientInterval = null // create a new ingredient every x seconds - it's a good soup
+        this.ingredientInterval = null // create a new ingredient every x seconds - leave null, to work!
         this.ingredients = [];
         this.elementRecipeName = document.getElementById("recipe");
         this.elementRecipeIngredients = document.getElementById("ingredients");
@@ -47,7 +47,7 @@ class Game {
     }
     clearInterval(this.timerIntervalId);
     clearInterval(this.gameIntervalId);
-    this.ingredientInterval = this.levelChoice.ingredientInterval;
+    this.ingredientInterval = this.levelChoice.ingredientInterval; // needed here to make the Interval change between levels
     this.gameWonSound.pause();
     this.score = 0;
     this.scoreTotal.innerText = this.score;
@@ -269,6 +269,7 @@ class Game {
     }
 
     openHighScore(){
+    this.gameWonSound.pause()
     this.loadHighScores()
     this.startScreen.style.display = "none";
     this.gameOverScreenGood.style.display = "none";

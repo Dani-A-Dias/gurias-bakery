@@ -36,11 +36,13 @@ window.onload = function () {
 
 	highScoreReturnBtn.addEventListener("click", ()=>{
 		console.log("Return btn pressed")
+		newGame.gameWonSound.pause()
 		returnMainMenu()
 	})
 
 	restartButton.addEventListener('click', () => {
 		location.reload();
+		
 	});
 
 	//Event listeners - Game Won
@@ -53,6 +55,7 @@ window.onload = function () {
 	highScoreWon.addEventListener("click", ()=>{
 		console.log("Won highscore btn pressed")
 		openHighScores()
+		newGame.gameWonSound.pause()
 		
 	})
 

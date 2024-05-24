@@ -9,10 +9,13 @@ class Level {
         this.gameDuration= 120;
         this.ingredientInterval = 2000;
         this.changeLevel(); 
-        this.musicDefault =  new Audio('assets/kitchen-level-song.mp3');
-        this.backMusic = this.musicDefault
+        this.musicDefault = new Audio('assets/kitchen-level-song.mp3');
+        this.musicDefault.loop = true; 
+        this.backMusic = this.musicDefault;
         this.levelTwoSong = new Audio('assets/streetlevelmusic.mp3');
+        this.levelTwoSong.loop = true; 
         this.levelThreeSong = new Audio('assets/water-level-song.mp3');
+        this.levelThreeSong.loop = true;
     }
 
     changeLevel() {
