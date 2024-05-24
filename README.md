@@ -37,7 +37,7 @@ Features to implement after the MVP:
 </ul>
 
 
-## Data structure - ATUALIZAR DEPOIS PORQUE ISTO É SÓ IDEIAS AINDA!!!!
+## Data structure
 <h2>Classes and Methods:</h2>
 
 <h3>Game:</h3>
@@ -97,13 +97,19 @@ Features to implement after the MVP:
 ## States y States Transitions
 
 <strong>Start Screen:</strong><br>
-Transition: Start button clicked -> Game Screen.
+Transition: Start button clicked -> Game Screen.<br>
+Transition: Select button clicked -> Select level Screen.<br>
+Transition: HighScores button clicked -> HighScores Screen.<br>
 
 <strong>Game Screen:</strong><br>
-Transition: Player runs out of time or completes the level -> End Screen.
+Transition: Player runs out of time -> End Screen Sad.<br>
+Transition: Player completes the level -> End Screen Good.<br>
 
 <strong>End Screen:</strong><br>
-Transition: Restart button clicked -> Start Screen.
+Transition: Main Menu button clicked -> Start Screen.<br>
+Transition: Play Again button clicked -> Game Screen.<br>
+Transition: HighScores button clicked -> HighScores Screen.<br>
+
 
 ## Tasks
 <ol>
@@ -124,7 +130,7 @@ Transition: Restart button clicked -> Start Screen.
 
 ## Links
 
-- [Trello Link](https://trello.com)
-- [Slides Link](http://slides.com)
-- [Github repository Link](http://github.com)
-- [Deployment Link](http://github.com)
+- [Trello Link](https://trello.com/b/VarsDqVZ/gurias-bakery)
+- [Slides Link](https://docs.google.com/presentation/d/1w-8l11-_k5KblgAblhtWn3XR41wHhwN7NYU-kPUWbHw/edit#slide=id.p)
+- [Github repository Link](https://github.com/Dani-A-Dias/gurias-bakery)
+- [Deployment Link](https://dani-a-dias.github.io/gurias-bakery/)
